@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF MY SHOP TOPUP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+        body { font-family: 'Hind Siliguri', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pb-24">
+
+    <!-- Top Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-md mx-auto px-4 py-2.5 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-yellow-400 text-black px-2.5 py-1 rounded font-black text-sm tracking-wide">FF</div>
+                <div class="font-black text-base tracking-wider text-black">MY SHOP <span class="text-green-600">TOPUP</span></div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button onclick="openAddMoneyModal()" class="bg-green-500 hover:bg-green-600 text-white font-bold px-3 py-1.5 rounded-lg text-xs flex items-center shadow-sm">
+                    <i class="fa-solid fa-wallet mr-1"></i> <span id="userBalance">৳ 0</span>
+                </button>
+                <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded-lg text-xs shadow-sm">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notice Bar -->
+    <div class="max-w-md mx-auto px-4 mt-2">
+        <div class="bg-black text-white text-[11px] p-2.5 rounded-lg flex items-start space-x-2 shadow">
+            <span class="text-yellow-400 text-sm mt-0.5">🔔</span>
+            <p>FF MY SHOP TOPUP ২৪ ঘণ্টা টপ আপ করুন নিজে নিজে মাত্র ৩০ সেকেন্ডে 😍 যদি টপ আপ করতে না পারেন নিচে থাকা ভিডিওটি দেখে নেন অথবা আমাদের WhatsApp - <strong>01824364099</strong> নাম্বারে মেসেজ করুন যে কোনো প্রয়োজনে।</p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto px-4 py-3 space-y-4">
+
+        <!-- Breadcrumb & Title Banner -->
+        <div class="text-xs text-gray-500 mb-1">Home <span class="mx-1">›</span> Free Fire Topup ✨ <span class="mx-1">›</span> <span class="text-green-700 font-semibold">Weekly Lite</span></div>
+
+        <div class="bg-gradient-to-r from-green-600 to-emerald-700 rounded-xl p-4 text-white shadow-md flex items-center space-x-3">
+            <div class="w-12 h-12 bg-black/30 rounded-lg flex items-center justify-center text-xl font-bold border border-white/20">💎</div>
+            <div>
+                <h2 class="text-base font-bold text-yellow-300">Weekly Lite</h2>
+                <p class="text-[11px] text-gray-100">ইনস্ট্যান্ট অটো ডেলিভারি প্যাক</p>
+            </div>
+        </div>
+
+        <!-- 1. Select Package Section -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 space-y-3">
+            <div class="flex items-center space-x-2">
+                <span class="w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center shadow-sm">1</span>
+                <h3 class="font-bold text-sm text-gray-800">Select Package</h3>
+            </div>
+
+            <!-- Package Grid -->
+            <div class="grid grid-cols-2 gap-2.5">
+                <div onclick="selectPkg(this, '1x weekly lite', 45)" class="pkg-card border-2 border-green-500 bg-green-50/50 rounded-xl p-3 text-center cursor-pointer transition">
+                    <p class="font-bold text-xs text-gray-800">1x weekly lite</p>
+                    <p class="text-green-600 font-bold text-sm mt-1">৳45</p>
+                </div>
+                <div onclick="selectPkg(this, '2X Weekly lite', 90)" class="pkg-card border-2 border-gray-200 rounded-xl p-3 text-center cursor-pointer hover:border-green-400 transition">
+                    <p class="font-bold text-xs text-gray-800">2X Weekly lite</p>
+                    <p class="text-green-600 font-bold text-sm mt-1">৳90</p>
+                </div>
+                <div onclick="selectPkg(this, '3x weekly lite', 135)" class="pkg-card border-2 border-gray-200 rounded-xl p-3 text-center cursor-pointer hover:border-green-400 transition">
+                    <p class="font-bold text-xs text-gray-800">3x weekly lite</p>
+                    <p class="text-green-600 font-bold text-sm mt-1">৳135</p>
+                </div>
+                <div onclick="selectPkg(this, '4x weekly lite', 180)" class="pkg-card border-2 border-gray-200 rounded-xl p-3 text-center cursor-pointer hover:border-green-400 transition">
+                    <p class="font-bold text-xs text-gray-800">4x weekly lite</p>
+                    <p class="text-green-600 font-bold text-sm mt-1">৳180</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Checkout Section -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 space-y-4">
+            <div class="flex items-center space-x-2">
+                <span class="w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center shadow-sm">2</span>
+                <h3 class="font-bold text-sm text-gray-800">Checkout</h3>
+            </div>
+
+            <!-- Your Details -->
+            <div class="space-y-1.5">
+                <p class="text-[11px] font-bold text-green-700 uppercase tracking-wider">YOUR DETAILS</p>
+                <div class="bg-amber-50/50 border border-amber-200/60 p-3 rounded-xl space-y-2">
+                    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded">WEEKLY LITE</span>
+                    <label class="block text-xs font-semibold text-gray-700">Weekly Lite Player ID *</label>
+                    <div class="flex space-x-2">
+                        <input type="text" id="playerUid" placeholder="e.g. 3077799485" class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-500">
+                        <button onclick="verifyPlayer()" class="bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold px-4 py-2 rounded-lg text-xs shadow-sm flex items-center">
+                            <i class="fa-solid fa-magnifying-glass mr-1"></i> Verify
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="space-y-1.5">
+                <p class="text-[11px] font-bold text-green-700 uppercase tracking-wider">PAYMENT METHOD</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="border-2 border-green-500 bg-green-50/50 p-3 rounded-xl cursor-pointer flex items-center space-x-2">
+                        <i class="fa-solid fa-wallet text-green-600 text-lg"></i>
+                        <div>
+                            <p class="text-xs font-bold text-gray-800">Wallet</p>
+                            <p class="text-[10px] text-red-500 font-medium">Low balance</p>
+                        </div>
+                    </div>
+                    <div class="border-2 border-gray-200 p-3 rounded-xl cursor-pointer flex items-center space-x-2 opacity-70">
+                        <i class="fa-solid fa-credit-card text-gray-600 text-lg"></i>
+                        <div>
+                            <p class="text-xs font-bold text-gray-800">Direct</p>
+                            <p class="text-[10px] text-gray-500">bKash, Nagad...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Order Button -->
+            <button onclick="submitOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl text-sm shadow-md transition">
+                অর্ডার কনফার্ম করুন (৳<span id="selectedPrice">45</span>)
+            </button>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-2 shadow-lg z-50">
+        <div class="max-w-md mx-auto flex justify-around items-center text-xs font-medium text-gray-600">
+            <a href="#" class="flex flex-col items-center text-green-600">
+                <i class="fa-solid fa-house text-lg"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="flex flex-col items-center hover:text-green-600">
+                <i class="fa-solid fa-box-archive text-lg"></i>
+                <span>My Orders</span>
+            </a>
+            <button onclick="openAddMoneyModal()" class="flex flex-col items-center -mt-5">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                    <i class="fa-solid fa-plus text-xl"></i>
+                </div>
+                <span class="mt-1 font-semibold text-green-700">Add Fund</span>
+            </button>
+            <a href="#" class="flex flex-col items-center hover:text-green-600">
+                <i class="fa-solid fa-ticket text-lg"></i>
+                <span>My Codes</span>
+            </a>
+            <a href="#" class="flex flex-col items-center hover:text-green-600">
+                <i class="fa-solid fa-user text-lg"></i>
+                <span>Account</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Add Money Modal (With your number 01824364099) -->
+    <div id="addMoneyModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-end sm:items-center justify-center">
+        <div class="bg-white w-full max-w-md rounded-t-2xl sm:rounded-2xl p-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b pb-2 mb-3">
+                <h4 class="font-bold text-green-700 text-base">Add Fund to Wallet</h4>
+                <button onclick="closeAddMoneyModal()" class="text-gray-500 hover:text-black"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="space-y-3 text-xs">
+                <div class="bg-green-50 p-3 rounded-xl border border-green-200 space-y-1">
+                    <p class="font-bold text-green-900 mb-1">পেমেন্ট করার নিয়ম:</p>
+                    <p class="text-gray-700">নিচের পার্সোনাল নম্বরে সেন্ড মানি বা ক্যাশ ইন করুন:</p>
+                    <p class="font-bold text-gray-900 text-sm mt-1">bKash / Nagad / Rocket:</p>
+                    <div class="flex items-center justify-between bg-white p-2 rounded border border-green-300">
+                        <span class="font-mono font-bold text-green-700 text-sm">01824364099</span>
+                        <button onclick="copyNumber()" class="bg-green-600 text-white px-2.5 py-1 rounded text-[10px] font-bold">Copy</button>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-semibold text-gray-700 mb-1">টাকার পরিমাণ (৳)</label>
+                    <input type="number" id="addAmount" placeholder="যেমন: 100" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-500">
+                </div>
+                <div>
+                    <label class="block font-semibold text-gray-700 mb-1">ট্রানজেকশন আইডি (TrxID)</label>
+                    <input type="text" id="trxId" placeholder="TrxID দিন" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-500">
+                </div>
+                <button onclick="submitAddMoney()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-lg text-sm shadow">ব্যালেন্স যোগ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let balance = 0;
+        let currentPrice = 45;
+
+        function selectPkg(element, name, price) {
+            // Remove active style from all cards
+            document.querySelectorAll('.pkg-card').forEach(card => {
+                card.classList.remove('border-green-500', 'bg-green-50/50');
+                card.classList.add('border-gray-200');
+            });
+            // Add active style to selected card
+            element.classList.remove('border-gray-200');
+            element.classList.add('border-green-500', 'bg-green-50/50');
+            
+            currentPrice = price;
+            document.getElementById('selectedPrice').innerText = price;
+        }
+
+        function verifyPlayer() {
+            let uid = document.getElementById('playerUid').value;
+            if(!uid) {
+                alert('দয়া করে Player ID লিখুন!');
+                return;
+            }
+            alert('Player ID সফলভাবে ভেরিফাই করা হয়েছে! আইডি সঠিক আছে।');
+        }
+
+        function openAddMoneyModal() {
+            document.getElementById('addMoneyModal').classList.remove('hidden');
+        }
+        function closeAddMoneyModal() {
+            document.getElementById('addMoneyModal').classList.add('hidden');
+        }
+
+        function copyNumber() {
+            navigator.clipboard.writeText('01824364099');
+            alert('নম্বরটি কপি করা হয়েছে: 01824364099');
+        }
+
+        function submitOrder() {
+            let uid = document.getElementById('playerUid').value;
+            if(!uid) {
+                alert('দয়া করে Player ID লিখুন!');
+                return;
+            }
+            if(balance < currentPrice) {
+                alert('আপনার ওয়ালেটে পর্যাপ্ত ব্যালেন্স নেই! দয়া করে আগে Add Fund থেকে ব্যালেন্স রিচার্জ করুন।');
+                openAddMoneyModal();
+                return;
+            }
+            balance -= currentPrice;
+            document.getElementById('userBalance').innerText = '৳ ' + balance;
+            alert('অর্ডার সফল হয়েছে! খুব শীঘ্রই আপনার আইডিতে ডেলিভারি পৌঁছে যাবে।');
+            document.getElementById('playerUid').value = '';
+        }
+
+        function submitAddMoney() {
+            let amount = parseInt(document.getElementById('addAmount').value);
+            let trx = document.getElementById('trxId').value;
+            if(!amount || !trx) {
+                alert('দয়া করে সঠিক টাকার পরিমাণ এবং TrxID লিখুন!');
+                return;
+            }
+            balance += amount;
+            document.getElementById('userBalance').innerText = '৳ ' + balance;
+            alert('সফলভাবে ফান্ড রিকোয়েস্ট জমা হয়েছে!');
+            closeAddMoneyModal();
+            document.getElementById('addAmount').value = '';
+            document.getElementById('trxId').value = '';
+        }
+    </script>
+</body>
+  </html>
